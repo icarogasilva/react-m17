@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import './ProdutoForm.css';
 
 function ProdutoForm({ onAdicionar }) {
   const [nome, setNome] = useState('');
@@ -27,7 +28,7 @@ function ProdutoForm({ onAdicionar }) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="produto-form" onSubmit={handleSubmit}>
       <input
         type="text"
         placeholder="Nome do produto"

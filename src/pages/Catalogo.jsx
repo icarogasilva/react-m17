@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import ProdutoCard from '../components/ProdutoCard.jsx';
 import ProdutoForm from '../components/ProdutoForm.jsx';
+import './Catalogo.css';
 
 const API_URL = 'https://crudcrud.com/api/4d64a2664cf34ddbb01b9ff65c9e036e/produtos';
 
