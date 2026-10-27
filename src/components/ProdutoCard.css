@@ -1,0 +1,17 @@
+.produto-card {
+  border: 1px solid #ddd;
+  width: 300px;
+  margin: 1rem;
+}
+
+.imagem {
+  width: 100%;
+}
+
+.conteudo {
+  padding: 1rem;
+}
+
+.preco {
+  font-size: 1rem;
+}
