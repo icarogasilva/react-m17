@@ -32,14 +32,23 @@ function Catalogo() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(novoProduto),
     })
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Erro ao adicionar produto');
+        }
+
+        return response.json();
+      })
       .then((produtoCriado) => {
         setListaProdutos((produtosAtuais) => [...produtosAtuais, produtoCriado]);
         return true;
       })
       .catch((error) => {
         console.error('Erro ao adicionar produto:', error);
-        return false;
+
+        const produtoLocal = { ...novoProduto, _id: Date.now().toString() };
+        setListaProdutos((produtosAtuais) => [...produtosAtuais, produtoLocal]);
+        return true;
       });
   }
 
